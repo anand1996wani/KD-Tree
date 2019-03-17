@@ -47,7 +47,7 @@ def kdpart(N,array,n,d):
     if(N!=1):
         nsample = (n)//10
         #print(nsample)
-        random.seed(10000)
+        #random.seed(10000)
         samplearray = random.sample(range(3,n),nsample)
         #print(samplearray)
         sarray = np.array(array[samplearray])
@@ -57,7 +57,7 @@ def kdpart(N,array,n,d):
             rangearray.append(np.max(sarray,axis = 0)[i] - np.min(sarray,axis = 0)[i])
         maxAxis = rangearray.index(max(rangearray))
         print("Max Axis is",maxAxis)
-        median = np.median(sarray,axis = maxAxis)
+        median = np.median(sarray,axis = 0)
         print("Median is ",median)
         #code for file creation
         left = []
@@ -97,3 +97,4 @@ if __name__ == "__main__":
         kdpart(N,array,n,d)
     else:
         print("Insert Value Of N As Some Power Of 2")
+
